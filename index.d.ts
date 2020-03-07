@@ -1,14 +1,17 @@
+type PromiseReturnType<T> = T extends PromiseLike<infer U> ? U : T
+
 /**
- * My awesome module.
- * @param input Lorem ipsum.
- * @param postfix Lorem ipsum.
+ * Resolve a promise synchronously.
+ * @param promise The promise to resolve.
  * @example
  * ```
- * const theModule = require("the-module");
- * theModule("unicorns");
- * //=> 'unicorns & rainbows'
+ * const pSync = require("p-sync");
+ * const got = require("got");
+ *
+ * pSync(got("https://google.com").text());
+ * //=> "<!doctype html>..."
  * ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string;
+declare function pSync<PromiseType extends PromiseLike>(promise: PromiseType | (() => PromiseType)): PromiseReturnType<PromiseType>
 
-export = theModule;
+export = pSync

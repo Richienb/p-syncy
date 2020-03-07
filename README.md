@@ -1,41 +1,36 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# Promise Sync [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/p-sync/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/p-sync)
 
-My awesome module.
+Resolve a promise synchronously.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/p-sync.png)](https://npmjs.com/package/p-sync)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install p-sync
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const pSync = require("p-sync");
+const got = require("got");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+pSync(got("https://google.com").text());
+//=> "<!doctype html>..."
+
+pSync(async () => {
+	return "Hello World!"
+})
+//=> "Hello World!"
 ```
 
 ## API
 
-### theModule(input, options?)
+### pSync(promise)
 
-#### input
+#### promise
 
-Type: `string`
+Type: `promise or function returning promise`
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The promise to resolve.

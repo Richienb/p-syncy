@@ -1,13 +1,8 @@
 const test = require("ava")
-const theModule = require(".")
+const execa = require("execa")
+const normalizeNewline = require("normalize-newline")
 
-test("main", (t) => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number",
-	})
-
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test("main", async (t) => {
+	t.is((await execa("node", ["fixtures/resolved"])).stdout, "a")
+	t.is(normalizeNewline((await execa("node", ["fixtures/rejected"], { reject: false })).stderr).split("\n")[4], "Error: a")
 })

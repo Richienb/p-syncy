@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "p-sync",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Resolve a promise synchronously.",
+	"repository": "https://github.com/Richienb/p-sync.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,11 +17,24 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"promise",
+		"async",
+		"sync",
+		"synchronous",
+		"resolve",
+		"value",
+		"get"
+	],
+	"dependencies": {
+		"p-is-promise": "^3.0.0",
+		"synchronized-promise": "^0.2.0"
+	},
 	"devDependencies": {
 		"ava": "^3.5.0",
 		"eslint-config-richienb": "^0.3.0",
+		"execa": "^4.0.0",
+		"normalize-newline": "^3.0.0",
 		"xo": "^0.26.1"
 	},
 	"resolutions": {

@@ -1,7 +1,14 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") throw new TypeError(`Expected a string, got ${typeof input}`)
+const syncPromise = require("synchronized-promise")
+const isPromise = require("p-is-promise")
 
-	return `${input} & ${postfix}`
+// Suppress DEP0097
+process.noDeprecation = true
+
+module.exports = (promise) => {
+	if (typeof promise === "function") promise = promise()
+	if (!isPromise(promise)) throw new TypeError("A promise must be provided!")
+
+	return syncPromise(() => promise)()
 }
