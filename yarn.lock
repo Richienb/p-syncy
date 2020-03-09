@@ -841,7 +841,7 @@ date-time@^2.1.0:
   dependencies:
     time-zone "^1.0.0"
 
-deasync@^0.1.15:
+deasync@^0.1.19:
   version "0.1.19"
   resolved "https://registry.yarnpkg.com/deasync/-/deasync-0.1.19.tgz#e7ea89fcc9ad483367e8a48fe78f508ca86286e8"
   integrity sha512-oh3MRktfnPlLysCPpBpKZZzb4cUC/p0aA3SyRGp15lN30juJBTo/CiD0d4fR+f1kBtUQoJj1NE9RPNWQ7BQ9Mg==
@@ -3755,13 +3755,6 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
-
-synchronized-promise@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/synchronized-promise/-/synchronized-promise-0.2.0.tgz#cfc4eae6a927d65ed4c9b3d2deaa602b864e06a3"
-  integrity sha512-wAfFhSqYSto1+UKcKQI807odBykCVpCEnCMa3hmt4pw/8a5Rhv44+1SgVyTpuwr5Iv8/247oM1ey6rVtFJOqwg==
-  dependencies:
-    deasync "^0.1.15"
 
 table@^5.2.3:
   version "5.4.6"
