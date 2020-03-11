@@ -1,4 +1,4 @@
-type PromiseReturnType<T> = T extends PromiseLike<infer U> ? U : T
+import { PromiseValue } from "type-fest"
 
 /**
  * Resolve a promise synchronously.
@@ -12,6 +12,6 @@ type PromiseReturnType<T> = T extends PromiseLike<infer U> ? U : T
  * //=> "<!doctype html>..."
  * ```
 */
-declare function pSync<PromiseType extends PromiseLike>(promise: PromiseType | (() => PromiseType)): PromiseReturnType<PromiseType>
+declare function pSync<PromiseType extends PromiseLike<any>>(promise: PromiseType | (() => PromiseType)): PromiseValue<PromiseType>
 
 export = pSync
