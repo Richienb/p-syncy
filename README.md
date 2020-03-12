@@ -2,6 +2,9 @@
 
 Resolve a promise synchronously.
 
+*Note: this package is a work in progress. First release coming soon.*
+
+<!--
 [![NPM Badge](https://nodei.co/npm/p-sync.png)](https://npmjs.com/package/p-sync)
 
 ## Install
@@ -9,6 +12,7 @@ Resolve a promise synchronously.
 ```sh
 npm install p-sync
 ```
+-->
 
 ## Usage
 
