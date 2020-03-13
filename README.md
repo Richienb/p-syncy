@@ -2,7 +2,7 @@
 
 Resolve a promise synchronously.
 
-*Note: this package is a work in progress. First release coming soon.*
+*Note: This package is yet to be released since `p-sync` has been "taken" by `psync` so I'm currently querying support.*
 
 <!--
 [![NPM Badge](https://nodei.co/npm/p-sync.png)](https://npmjs.com/package/p-sync)
