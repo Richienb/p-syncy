@@ -1,6 +1,6 @@
 {
 	"name": "p-syncy",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Resolve a promise synchronously.",
 	"repository": "https://github.com/Richienb/p-syncy.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
