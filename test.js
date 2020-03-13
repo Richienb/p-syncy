@@ -1,11 +1,11 @@
 const test = require("ava")
-const pSync = require(".")
+const pSyncy = require(".")
 
 test.cb("resolving promise", (t) => {
 	const resolved = Promise.resolve("a")
 
 	setImmediate(() => {
-		t.is(pSync(resolved), "a")
+		t.is(pSyncy(resolved), "a")
 
 		t.end()
 	})
@@ -15,7 +15,7 @@ test.cb("rejecting promise", (t) => {
 	const rejected = Promise.reject(new Error("a"))
 
 	setImmediate(() => {
-		t.throws(() => pSync(rejected), {
+		t.throws(() => pSyncy(rejected), {
 			instanceOf: Error,
 			message: "a",
 		})

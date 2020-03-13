@@ -1,29 +1,25 @@
-# Promise Sync [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/p-sync/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/p-sync)
+# p-syncy [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/p-syncy/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/p-syncy)
 
 Resolve a promise synchronously.
 
-*Note: This package is yet to be released since `p-sync` has been "taken" by `psync` so I'm currently querying support.*
-
-<!--
-[![NPM Badge](https://nodei.co/npm/p-sync.png)](https://npmjs.com/package/p-sync)
+[![NPM Badge](https://nodei.co/npm/p-syncy.png)](https://npmjs.com/package/p-syncy)
 
 ## Install
 
 ```sh
-npm install p-sync
+npm install p-syncy
 ```
--->
 
 ## Usage
 
 ```js
-const pSync = require("p-sync");
+const pSyncy = require("p-syncy");
 const got = require("got");
 
-pSync(got("https://google.com").text());
+pSyncy(got("https://google.com").text());
 //=> "<!doctype html>..."
 
-pSync(async () => {
+pSyncy(async () => {
 	return "Hello World!"
 })
 //=> "Hello World!"
@@ -31,7 +27,7 @@ pSync(async () => {
 
 ## API
 
-### pSync(promise)
+### pSyncy(promise)
 
 #### promise
 

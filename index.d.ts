@@ -5,13 +5,13 @@ import { PromiseValue } from "type-fest"
  * @param promise The promise to resolve.
  * @example
  * ```
- * const pSync = require("p-sync");
+ * const pSyncy = require("p-syncy");
  * const got = require("got");
  *
- * pSync(got("https://google.com").text());
+ * pSyncy(got("https://google.com").text());
  * //=> "<!doctype html>..."
  * ```
 */
-declare function pSync<PromiseType extends PromiseLike<any>>(promise: PromiseType | (() => PromiseType)): PromiseValue<PromiseType>
+declare function pSyncy<PromiseType extends PromiseLike<any>>(promise: PromiseType | (() => PromiseType)): PromiseValue<PromiseType>
 
-export = pSync
+export = pSyncy
