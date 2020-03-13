@@ -16,12 +16,16 @@ npm install p-syncy
 const pSyncy = require("p-syncy");
 const got = require("got");
 
-pSyncy(got("https://google.com").text());
+const { body } = pSyncy(got("https://google.com"));
+
+console.log(body)
 //=> "<!doctype html>..."
 
-pSyncy(async () => {
+const result = pSyncy(async () => {
 	return "Hello World!"
 })
+
+console.log(result)
 //=> "Hello World!"
 ```
 

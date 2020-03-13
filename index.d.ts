@@ -8,8 +8,17 @@ import { PromiseValue } from "type-fest"
  * const pSyncy = require("p-syncy");
  * const got = require("got");
  *
- * pSyncy(got("https://google.com").text());
+ * const { body } = pSyncy(got("https://google.com"));
+ *
+ * console.log(body)
  * //=> "<!doctype html>..."
+ *
+ * const result = pSyncy(async () => {
+ * 	return "Hello World!"
+ * })
+ *
+ * console.log(result)
+ * //=> "Hello World!"
  * ```
 */
 declare function pSyncy<PromiseType extends PromiseLike<any>>(promise: PromiseType | (() => PromiseType)): PromiseValue<PromiseType>
