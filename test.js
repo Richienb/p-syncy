@@ -1,8 +1,25 @@
 const test = require("ava")
-const execa = require("execa")
-const normalizeNewline = require("normalize-newline")
+const pSync = require(".")
 
-test("main", async (t) => {
-	t.is((await execa("node", ["fixtures/resolved"])).stdout, "a")
-	t.is(normalizeNewline((await execa("node", ["fixtures/rejected"], { reject: false })).stderr).split("\n")[4], "Error: a")
+test.cb("resolving promise", (t) => {
+	const resolved = Promise.resolve("a")
+
+	setImmediate(() => {
+		t.is(pSync(resolved), "a")
+
+		t.end()
+	})
+})
+
+test.cb("rejecting promise", (t) => {
+	const rejected = Promise.reject(new Error("a"))
+
+	setImmediate(() => {
+		t.throws(() => pSync(rejected), {
+			instanceOf: Error,
+			message: "a",
+		})
+
+		t.end()
+	})
 })
