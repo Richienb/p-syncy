@@ -1,5 +1,3 @@
-import { PromiseValue } from "type-fest"
-
 /**
  * Resolve a promise synchronously.
  * @param promise The promise to resolve.
@@ -21,6 +19,6 @@ import { PromiseValue } from "type-fest"
  * //=> "Hello World!"
  * ```
 */
-declare function pSyncy<PromiseType extends PromiseLike<any>>(promise: PromiseType | (() => PromiseType)): PromiseValue<PromiseType>
+declare function pSyncy<PromiseValue>(promise: PromiseLike<PromiseValue> | (() => PromiseLike<PromiseValue>)): PromiseValue
 
 export = pSyncy
