@@ -12,7 +12,7 @@
  * //=> "<!doctype html>..."
  *
  * const result = pSyncy(async () => {
- * 	return "Hello World!"
+ *     return "Hello World!"
  * })
  *
  * console.log(result)
