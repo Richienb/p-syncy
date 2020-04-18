@@ -31,48 +31,17 @@
 		"p-is-promise": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^3.5.0",
-		"eslint-config-richienb": "^0.3.0",
-		"xo": "^0.27.2"
+		"ava": "^3.7.0",
+		"eslint-config-richienb": "^0.4.2",
+		"xo": "^0.29.1"
 	},
 	"resolutions": {
 		"eslint": "^6.8.0"
 	},
 	"xo": {
-		"extends": "richienb/node",
+		"extends": "richienb",
 		"rules": {
-			"promise/prefer-await-to-then": 0,
-			"promise/always-return": 0
-		},
-		"overrides": [
-			{
-				"files": "*.ts",
-				"rules": {
-					"@typescript-eslint/semi": [
-						"error",
-						"never"
-					],
-					"@typescript-eslint/member-delimiter-style": [
-						"error",
-						{
-							"singleline": {
-								"delimiter": "comma"
-							},
-							"multiline": {
-								"delimiter": "none"
-							}
-						}
-					],
-					"@typescript-eslint/quotes": [
-						"error",
-						"double"
-					],
-					"@typescript-eslint/no-namespace": 0,
-					"@typescript-eslint/promise-function-async": 0,
-					"import/no-unresolved": 0,
-					"node/no-missing-import": 0
-				}
-			}
-		]
+			"promise/prefer-await-to-then": 0
+		}
 	}
 }

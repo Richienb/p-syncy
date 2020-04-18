@@ -1,7 +1,7 @@
 const test = require("ava")
 const pSyncy = require(".")
 
-test.cb("resolving promise", (t) => {
+test.cb("resolving promise", t => {
 	const resolved = Promise.resolve("a")
 
 	setImmediate(() => {
@@ -11,13 +11,13 @@ test.cb("resolving promise", (t) => {
 	})
 })
 
-test.cb("rejecting promise", (t) => {
+test.cb("rejecting promise", t => {
 	const rejected = Promise.reject(new Error("a"))
 
 	setImmediate(() => {
 		t.throws(() => pSyncy(rejected), {
 			instanceOf: Error,
-			message: "a",
+			message: "a"
 		})
 
 		t.end()
